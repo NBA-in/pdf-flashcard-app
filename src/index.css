@@ -1,0 +1,63 @@
+/* 1. Import Font FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* 2. Then Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Then Custom Styles */
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+}
+
+/* --- ANIMATIONS --- */
+.machine-spin {
+  display: inline-block;
+  animation: alchemy-pulse 0.8s infinite alternate;
+}
+
+@keyframes alchemy-pulse {
+  0% { transform: scale(1); filter: hue-rotate(0deg); }
+  100% { transform: scale(1.1); filter: hue-rotate(90deg) drop-shadow(0 0 10px #0f0); }
+}
+
+.particle-anim {
+  animation: feed-machine 1.5s infinite linear;
+}
+
+@keyframes feed-machine {
+  0% { left: 40px; opacity: 1; transform: scale(1); }
+  45% { left: 135px; opacity: 1; transform: scale(0.5); }
+  50% { left: 135px; opacity: 0; }
+  100% { left: 135px; opacity: 0; }
+}
+
+.gold-anim {
+  animation: eject-gold 1.5s infinite linear;
+  animation-delay: 0.7s;
+}
+
+@keyframes eject-gold {
+  0% { left: 160px; opacity: 0; transform: scale(0.5); }
+  10% { opacity: 1; }
+  100% { left: 260px; opacity: 1; transform: scale(1); } 
+}
+
+/* 3D Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
