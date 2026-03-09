@@ -1,6 +1,5 @@
 /* 1. Import Font FIRST */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* 2. Then Tailwind */
 @tailwind base;
@@ -11,7 +10,7 @@
 body {
   background-color: #1a1a1a;
   color: #ffffff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -22,8 +21,15 @@ body {
 }
 
 @keyframes alchemy-pulse {
-  0% { transform: scale(1); filter: hue-rotate(0deg); }
-  100% { transform: scale(1.1); filter: hue-rotate(90deg) drop-shadow(0 0 10px #0f0); }
+  0% {
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.1);
+    filter: hue-rotate(90deg) drop-shadow(0 0 10px #0f0);
+  }
 }
 
 .particle-anim {
@@ -31,10 +37,27 @@ body {
 }
 
 @keyframes feed-machine {
-  0% { left: 40px; opacity: 1; transform: scale(1); }
-  45% { left: 135px; opacity: 1; transform: scale(0.5); }
-  50% { left: 135px; opacity: 0; }
-  100% { left: 135px; opacity: 0; }
+  0% {
+    left: 40px;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  45% {
+    left: 135px;
+    opacity: 1;
+    transform: scale(0.5);
+  }
+
+  50% {
+    left: 135px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 135px;
+    opacity: 0;
+  }
 }
 
 .gold-anim {
@@ -43,21 +66,36 @@ body {
 }
 
 @keyframes eject-gold {
-  0% { left: 160px; opacity: 0; transform: scale(0.5); }
-  10% { opacity: 1; }
-  100% { left: 260px; opacity: 1; transform: scale(1); } 
+  0% {
+    left: 160px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 260px;
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* 3D Card Utilities */
 .perspective-1000 {
   perspective: 1000px;
 }
+
 .transform-style-3d {
   transform-style: preserve-3d;
 }
+
 .backface-hidden {
   backface-visibility: hidden;
 }
+
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
