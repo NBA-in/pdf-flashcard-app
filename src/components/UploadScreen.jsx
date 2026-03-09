@@ -46,7 +46,7 @@ const UploadScreen = ({ onUpload, currentUser, totalCardsCreated = 0 }) => {
       {/* Header Section */}
       <div className="w-full max-w-2xl mb-12">
         <h1 className="text-5xl font-bold text-[#E3E3E3] mb-4 tracking-tight">
-          Hello, <span className="text-[#A8C7FA]">{currentUser?.displayName || currentUser?.email?.split('@')[0] || "Student"}</span>
+          Hello, <span className="text-[#A8C7FA]">{currentUser?.displayName || currentUser?.email?.split('@')[0] || 'User'}</span>
         </h1>
         <p className="text-[#C4C7C5] text-xl font-light">
           What are we studying today? Upload a PDF to generate AI flashcards instantly.

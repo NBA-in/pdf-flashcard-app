@@ -44,7 +44,7 @@ const UploadScreenLight = ({ onUpload, currentUser, totalCardsCreated = 0 }) => 
       {/* Header Section */}
       <div className="w-full max-w-2xl mb-12">
         <h1 className="text-5xl font-bold text-[#1F1F1F] mb-4 tracking-tight">
-          Hello, <span className="text-[#0B57D0]">{currentUser?.displayName || currentUser?.email?.split('@')[0] || "Student"}</span>
+          Hello, <span className="text-[#0B57D0]">{currentUser?.displayName || currentUser?.email?.split('@')[0] || 'User'}</span>
         </h1>
         <p className="text-[#444746] text-xl font-light">
           Upload a PDF to generate your daily flashcards.
