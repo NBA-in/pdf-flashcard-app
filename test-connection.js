@@ -12,7 +12,6 @@ if (!apiKey) {
   process.exit(1);
 }
 
-console.log(`🔑 Using API Key: ${apiKey.substring(0, 8)}...`);
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
