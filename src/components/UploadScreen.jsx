@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
 
-const UploadScreen = ({ onUpload, currentUser, totalCardsCreated = 0 }) => {
+const UploadScreen = ({ onUpload, currentUser, totalCardsCreated = 0, totalDecksCreated = 0 }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
 
@@ -49,7 +49,7 @@ const UploadScreen = ({ onUpload, currentUser, totalCardsCreated = 0 }) => {
           Hello, <span className="text-[#A8C7FA]">{currentUser?.displayName || currentUser?.email?.split('@')[0] || 'User'}</span>
         </h1>
         <p className="text-[#C4C7C5] text-xl font-light">
-          What are we studying today? Upload a PDF to generate AI flashcards instantly.
+          What are we studying today? Upload a PDF to generate flashcards instantly.
         </p>
       </div>
 
@@ -127,11 +127,16 @@ const UploadScreen = ({ onUpload, currentUser, totalCardsCreated = 0 }) => {
       </div>
 
       {/* Bottom Stats Cards (Dark Version) */}
-      <div className="w-full grid grid-cols-1 gap-6">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Card 1 */}
         <div className="bg-[#1E1F20] border border-[#444746] p-6 rounded-[24px] hover:shadow-lg transition-shadow duration-300">
           <div className="text-[#C4C7C5] text-sm font-medium uppercase tracking-wider mb-2">Flashcards Created</div>
           <div className="text-4xl font-bold text-[#E3E3E3]">{totalCardsCreated.toLocaleString()}</div>
+        </div>
+        {/* Card 2 */}
+        <div className="bg-[#1E1F20] border border-[#444746] p-6 rounded-[24px] hover:shadow-lg transition-shadow duration-300">
+          <div className="text-[#C4C7C5] text-sm font-medium uppercase tracking-wider mb-2">Decks Created</div>
+          <div className="text-4xl font-bold text-[#E3E3E3]">{totalDecksCreated.toLocaleString()}</div>
         </div>
       </div>
 

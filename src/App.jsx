@@ -156,6 +156,7 @@ function App() {
   }
 
   const totalCardsCreated = decks.filter(d => !d.deleted).reduce((acc, curr) => acc + (curr.flashcards ? curr.flashcards.length : 0), 0);
+  const totalDecksCreated = decks.filter(d => !d.deleted).length;
 
   const loadDeck = (deck) => {
     setFileName(deck.fileName);
@@ -209,9 +210,9 @@ function App() {
       {appState === 'idle' && (
         <ActiveLayout onToggleTheme={toggleTheme} currentTheme={theme} currentUser={currentUser} decks={decks} loadDeck={loadDeck} onReset={handleReset}>
           {theme === 'light' ? (
-            <UploadScreenLight onUpload={handleFileUpload} currentUser={currentUser} totalCardsCreated={totalCardsCreated} />
+            <UploadScreenLight onUpload={handleFileUpload} currentUser={currentUser} totalCardsCreated={totalCardsCreated} totalDecksCreated={totalDecksCreated} />
           ) : (
-            <UploadScreen onUpload={handleFileUpload} currentUser={currentUser} totalCardsCreated={totalCardsCreated} />
+            <UploadScreen onUpload={handleFileUpload} currentUser={currentUser} totalCardsCreated={totalCardsCreated} totalDecksCreated={totalDecksCreated} />
           )}
         </ActiveLayout>
       )}

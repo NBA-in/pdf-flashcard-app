@@ -11,6 +11,16 @@ const FlashcardViewer = ({ data, onReset, theme, defaultTitle = "Your PDF Deck",
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [showUpdateMsg, setShowUpdateMsg] = useState(false);
 
+  // Reset internal state when a new deck is selected or the default title changes
+  useEffect(() => {
+    setCurrentIndex(0);
+    setIsFlipped(false);
+    setDeckTitle(defaultTitle);
+    setInitialTitle(defaultTitle);
+    setIsEditingTitle(false);
+    setShowUpdateMsg(false);
+  }, [currentDeckId, defaultTitle]);
+
   // Create an extended deck that includes the first and last cards
   const extendedData = [
     { isTitleCard: true },
@@ -83,7 +93,7 @@ const FlashcardViewer = ({ data, onReset, theme, defaultTitle = "Your PDF Deck",
 
     return parts.map((part, index) => {
       if (!part) return null;
-
+      
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
           <strong key={index} className={`font-bold ${isDark ? 'text-[#8AB4F8]' : 'text-[#1A73E8]'}`}>

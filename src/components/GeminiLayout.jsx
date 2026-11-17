@@ -51,20 +51,20 @@ const GeminiLayout = ({ children, onToggleTheme, currentUser, decks = [], loadDe
             <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
               {section !== 'Trash' && (
                 <>
-                  <button onClick={(e) => handleToggleStar(e, deck)} className={`hover:text-yellow-400 ${deck.starred ? 'text-yellow-400 opacity-100' : 'text-[#C4C7C5]'}`}>
+                  <button onClick={(e) => handleToggleStar(e, deck)} className={`hover:text-yellow-400 text-lg ${deck.starred ? 'text-yellow-400 opacity-100' : 'text-[#C4C7C5]'}`}>
                     ★
                   </button>
-                  <button onClick={(e) => handleToggleTrash(e, deck)} className="text-[#C4C7C5] hover:text-red-400" title="Move to Trash">
+                  <button onClick={(e) => handleToggleTrash(e, deck)} className="text-[#C4C7C5] hover:text-red-400 text-lg" title="Move to Trash">
                     🗑
                   </button>
                 </>
               )}
               {section === 'Trash' && (
                 <>
-                  <button onClick={(e) => handleToggleTrash(e, deck)} className="text-[#C4C7C5] hover:text-green-400" title="Restore">
+                  <button onClick={(e) => handleToggleTrash(e, deck)} className="text-[#C4C7C5] hover:text-green-400 text-lg" title="Restore">
                     ↺
                   </button>
-                  <button onClick={(e) => handleDeletePermanent(e, deck)} className="text-[#C4C7C5] hover:text-red-500" title="Delete Permanently">
+                  <button onClick={(e) => handleDeletePermanent(e, deck)} className="text-[#C4C7C5] hover:text-red-500 text-lg" title="Delete Permanently">
                     ✕
                   </button>
                 </>

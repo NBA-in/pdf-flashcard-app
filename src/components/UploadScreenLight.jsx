@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
 
-const UploadScreenLight = ({ onUpload, currentUser, totalCardsCreated = 0 }) => {
+const UploadScreenLight = ({ onUpload, currentUser, totalCardsCreated = 0, totalDecksCreated = 0 }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 
@@ -125,11 +125,16 @@ const UploadScreenLight = ({ onUpload, currentUser, totalCardsCreated = 0 }) => 
       </div>
 
       {/* Bottom Stats Cards */}
-      <div className="w-full grid grid-cols-1 gap-6">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Card 1 */}
         <div className="bg-white border border-[#E0E2E5] p-6 rounded-[24px] hover:shadow-lg transition-shadow duration-300">
           <div className="text-[#444746] text-sm font-medium uppercase tracking-wider mb-2">Flashcards Created</div>
           <div className="text-4xl font-bold text-[#1F1F1F]">{totalCardsCreated.toLocaleString()}</div>
+        </div>
+        {/* Card 2 */}
+        <div className="bg-white border border-[#E0E2E5] p-6 rounded-[24px] hover:shadow-lg transition-shadow duration-300">
+          <div className="text-[#444746] text-sm font-medium uppercase tracking-wider mb-2">Decks Created</div>
+          <div className="text-4xl font-bold text-[#1F1F1F]">{totalDecksCreated.toLocaleString()}</div>
         </div>
       </div>
 
